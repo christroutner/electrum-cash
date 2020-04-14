@@ -1,7 +1,9 @@
 # electrum-cash
 
-Electrum-cash is a lightweight `JavaScript` library that lets you connect with one or more `Electrum` servers. 
-It offers encrypted connections by default, 
+**Note**: This is my personal fork of [Jonathan Silverblood's excellent electrum-cash library](https://gitlab.com/GeneralProtocols/electrum-cash)
+
+Electrum-cash is a lightweight `JavaScript` library that lets you connect with one or more `Electrum` servers.
+It offers encrypted connections by default,
 performs the expected protocol version negotiation and
 automatically keeps your connection alive until your close it.
 
@@ -48,7 +50,7 @@ await electrum.connect();
 
 If you want to use multiple servers, initialize a `Cluster` and add some servers:
 
-*For more information on various cluster configurations, read the [cluster documentation](cluster.md).* 
+*For more information on various cluster configurations, read the [cluster documentation](cluster.md).*
 
 ```js
 // Initialize an electrum cluster where 2 out of 3 needs to be consistent, polled randomly with fail-over.
