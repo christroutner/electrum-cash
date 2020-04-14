@@ -1,0 +1,33 @@
+image: node
+
+stages:
+    - lint
+    - tests
+    - docs
+
+cache:
+    paths:
+        - node_modules/
+
+linting:
+    stage: lint
+    script:
+        - npm install eslint
+        - node_modules/eslint/bin/eslint.js .
+
+testing:
+    stage: tests
+    script:
+        - npm install
+        - npm run test
+
+pages:
+    stage: docs
+    script:
+        - npm install
+        - npm run docs
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
